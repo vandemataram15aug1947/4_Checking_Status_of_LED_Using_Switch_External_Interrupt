@@ -1,6 +1,3 @@
-/*Maaz khan
- * Reg No : 19jzele0320
- */
 
 //*****************************************
 //Blinking of LED Using External interrupts  based on switch
@@ -8,7 +5,7 @@
 
 #include "F28x_Project.h"
 
-////////////  MAAZ KHAN  ///////////
+////////////  Vande  ///////////
 
 // Function prototype
 #define BLINKY_LED1_GPIO    31
@@ -19,7 +16,7 @@ interrupt void myExternalInterrupt(void);
 void main(void)
 {
 
-    ////////////  MAAZ KHAN  ///////////
+    ////////////  Vande  ///////////
 
     // Initialize System Control:
     InitSysCtrl();
@@ -35,7 +32,7 @@ void main(void)
     GPIO_SetupPinMux(BLINKY_LED2_GPIO, GPIO_MUX_CPU1, 0);
     GPIO_SetupPinOptions(BLINKY_LED2_GPIO, GPIO_OUTPUT, GPIO_PUSHPULL);
 
-    ////////////  MAAZ KHAN   //////////////
+    ////////////  Vande   //////////////
 
     // Initialization of GPIO_18 and GPIO_22 for logic analyzer as an output
     EALLOW;
@@ -47,7 +44,7 @@ void main(void)
     GpioCtrlRegs.GPADIR.bit.GPIO22 = 1;
     EDIS;
 
-    ////////////  MAAZ KHAN   //////////////
+    ////////////  Vande   //////////////
 
     //Configure GPIO_67 as an Input
     EALLOW;
@@ -65,7 +62,7 @@ void main(void)
     //Initialize PIE Vector Table
     InitPieVectTable();
 
-    ////////////  MAAZ KHAN   //////////////
+    ////////////  Vande   //////////////
 
     //Configure External Interrupt 1 in PIE Vector table
     EALLOW;
@@ -96,7 +93,7 @@ void main(void)
     // Forever loop
     for(;;)
     {
-        ////////////  MAAZ KHAN   //////////////
+        ////////////  Vande   //////////////
 
         // Turn on LED1
 
@@ -124,12 +121,12 @@ void main(void)
 // ISR for GPIO67
 interrupt void myExternalInterrupt(void)
 {
-    /////////////  MAAZ KHAN ///////////////
+    /////////////  Vande ///////////////
     GPIO_WritePin(BLINKY_LED2_GPIO, 1);
     DELAY_US(1000*500);
     GPIO_WritePin(BLINKY_LED2_GPIO, 0);
     DELAY_US(1000*500);
-    ////////////  MAAZ KHAN   //////////////
+    ////////////  Vande   //////////////
     Logic2 = 1;
     DELAY_US(1000*500);
     Logic2 = 0;
